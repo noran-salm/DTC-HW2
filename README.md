@@ -1,11 +1,13 @@
 # Data Engineering Zoomcamp – Homework 2
 <div align="center">
+
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Cloud_DW-29B5E8?logo=snowflake&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
 ![Kestra](https://img.shields.io/badge/Kestra-Workflows-FF6B35?logo=apache-airflow&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?logo=pandas&logoColor=white)
 ![DuckDB](https://img.shields.io/badge/DuckDB-SQL-FFF000?logo=duckdb&logoColor=black)
+
 </div>
 
 ## 📚 Overview
