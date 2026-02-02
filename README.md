@@ -1,4 +1,17 @@
 # Data Engineering Homework Repository
+<div align="center">
+<img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python" height="60"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://www.vectorlogo.zone/logos/snowflake/snowflake-ar21.svg" alt="Snowflake" height="60"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://www.vectorlogo.zone/logos/docker/docker-ar21.svg" alt="Docker" height="60"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://kestra.io/logo.svg" alt="Kestra" height="60"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://pandas.pydata.org/static/img/pandas_mark.svg" alt="Pandas" height="60"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://duckdb.org/images/logo-dl/DuckDB_Logo.png" alt="DuckDB" height="60"/>
+</div>
 
 ## 📚 Overview
 
