@@ -2,24 +2,45 @@
 
 ## 📚 Overview
 
-This repository contains homework assignments and solutions for the Data Engineering course, focusing on NYC Taxi data analysis using modern data engineering tools and practices.
+This repository contains homework assignments and solutions for the Data Engineering course, focusing on NYC Taxi data analysis using modern data engineering tools including Kestra workflows and Snowflake data warehouse.
+
+## 🗂️ Repository Structure
+
+```
+├── README.md
+├── answers-notes.md
+├── docker-compose.yml
+└── flows/
+    ├── snowflake_kv.yaml
+    ├── snowflake_permissions.yaml
+    ├── snowflake_setup.yaml
+    └── snowflake_taxi.yaml
+```
 
 ## 🎯 Assignments Completed
 
-### NYC Taxi Data Quiz
+### NYC Taxi Data Homework
 - **File Size Analysis**: Calculated file sizes using shell commands
 - **Data Aggregation**: Analyzed Yellow and Green taxi trips for 2020
 - **Time-based Queries**: Extracted March 2021 trip counts
 - **Timezone Configuration**: Implemented proper timezone handling in Kestra
 
-**See detailed answers:** [nyc-taxi-quiz-answers.md](answers-notes.md)
+**See detailed answers:** [answers-notes/nyc-taxi-quiz-answers.md](answers-notes.md)
+
+### Snowflake Integration
+- **snowflake_kv**: Configuration management for Snowflake connections
+- **snowflake_permissions**: Database role and permission setup
+- **snowflake_setup**: Automated warehouse, database, and schema creation
+- **snowflake_taxi**: End-to-end pipeline for loading NYC taxi data into Snowflake
 
 ## 🛠️ Technologies Used
 
+- **Kestra**: Workflow orchestration and automation
+- **Snowflake**: Cloud data warehouse
 - **Python**: Data processing and analysis
   - `pandas`: Data manipulation
   - `duckdb`: SQL queries on parquet files
-- **Kestra**: Workflow orchestration
+- **Docker**: Containerized development environment
 - **Shell Scripts**: File operations and automation
 - **Parquet**: Columnar data format
 
@@ -35,29 +56,35 @@ This repository contains homework assignments and solutions for the Data Enginee
 
 ### Prerequisites
 ```bash
+# Python dependencies
 pip install pandas duckdb pyarrow
+
+# Docker (for running Kestra)
+docker --version
+docker-compose --version
 ```
 
-### Running the Scripts
-**docker container up:**
+### Running with Docker
+
+**Start Kestra:**
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
-**Yellow Taxi 2020 Analysis:**
-```bash
-python scripts/count_yellow_2020.py
-```
+**Access Kestra UI:**
+- Open browser to `http://localhost:8080`
+- Navigate to Flows to run workflows
 
-**Green Taxi 2020 Analysis:**
-```bash
-python scripts/count_green_2020.py
-```
+### Snowflake Workflows
 
-**March 2021 Analysis:**
-```bash
-python scripts/yellow_taxi_trips.py
-```
+The repository includes automated Snowflake workflows:
+
+1. **snowflake_setup**: Creates warehouse, database, and schema
+2. **snowflake_permissions**: Configures database roles and permissions
+3. **snowflake_taxi**: Loads NYC taxi data into Snowflake tables
+4. **snowflake_kv**: Manages configuration and connection settings
+
+Run these flows in order from the Kestra UI.
 
 ## 📝 Data Sources
 
@@ -66,7 +93,9 @@ All data is sourced from the NYC Taxi & Limousine Commission:
 - Format: Parquet files
 - Naming convention: `{color}_tripdata_{YYYY-MM}.parquet`
 
-## 🔧 Kestra Configuration
+## 🔧 Workflow Configuration
+
+### Kestra Timezone Settings
 
 To run Kestra workflows with proper timezone:
 
@@ -75,6 +104,17 @@ timezone: "America/New_York"
 ```
 
 This ensures all scheduled tasks run according to New York time, including automatic DST adjustments.
+
+### Snowflake Connection
+
+Configure Snowflake credentials in Kestra KV store or use the `snowflake_kv` flow to set up connection parameters:
+
+- Account
+- Username
+- Password
+- Warehouse
+- Database
+- Schema
 
 ## 📌 Notes
 
